@@ -161,6 +161,12 @@ for column in ws.columns:
 # Выбор пути для сохранения файла
 save_path = asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")],
                               title="Сохранить файл как")
+
+
+def test_ci():
+    pass
+
+
 if save_path:
     wb.save(save_path)
     messagebox.showinfo("Сохранение файла", f"Файл успешно сохранен по пути:\n{save_path}")
