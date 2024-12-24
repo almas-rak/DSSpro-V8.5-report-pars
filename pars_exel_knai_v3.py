@@ -8,7 +8,7 @@ import re
 from datetime import datetime
 
 lic_date = datetime(year=2024, month=12, day=1)
-curent_date = datetime.now().date()
+current_date = datetime.now().date()
 
 
 # Функция для проверки формата отметок
