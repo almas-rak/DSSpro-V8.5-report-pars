@@ -3,10 +3,10 @@ name: CI for DSSpro-V8.5-report-pars
 on:
   push:
     branches:
-      - main  # Запускать проверки при пуше в ветку main
+      - master    # Запускать проверки при пуше в ветку main
   pull_request:
     branches:
-      - main  # Запускать проверки при создании pull request в main
+      - master  # Запускать проверки при создании pull request в main
 
 jobs:
   test:
