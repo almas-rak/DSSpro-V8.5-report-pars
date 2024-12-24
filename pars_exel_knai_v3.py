@@ -43,6 +43,7 @@ else:
                          f"Файл не соответствует требованиям. Отсутствуют следующие столбцы: {', '.join(missing_columns)}")
     exit()
 
+# Удаление лишних столбцов
 data = data.drop(columns=['ID', 'Week', 'Away Period', 'Work Hours', 'Overtime Duration'], errors='ignore')
 data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
 
@@ -110,7 +111,7 @@ for col_num, header in enumerate(result.columns, 1):
     cell.border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),
                          bottom=Side(style='thin'))
 
-# Заполнение данных с чередующимися цветами строк
+# Шаблоны цветов
 fill_gray = PatternFill(start_color="93C6C6", end_color="93C6C6", fill_type="solid")
 fill_white = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
 fill_red = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
@@ -118,6 +119,7 @@ fill_yellow = PatternFill(start_color="F9C01A", end_color="F9C01A", fill_type="s
 fill_green = PatternFill(start_color="00B050", end_color="00B050", fill_type="solid")
 fill_blue = PatternFill(start_color="A25555", end_color="A25555", fill_type="solid")
 
+# Заполнение данных с чередующимися цветами строк
 for row_num, row in enumerate(result.itertuples(index=False), 2):
     row_fill = fill_gray if row_num % 2 == 0 else fill_white
     for col_num, value in enumerate(row, 1):
