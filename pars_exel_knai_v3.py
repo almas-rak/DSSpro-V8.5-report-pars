@@ -164,7 +164,7 @@ save_path = asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files
 
 
 def test_ci():
-    pass
+    print("test")
 
 
 if save_path:
